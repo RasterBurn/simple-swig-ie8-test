@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE-edge">
+	<title>Simple swig test</title>
+</head>
+<body>
+	<div id="test1"></div>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript" src="/swig.js"></script>
+	<script type="text/x-swig-template" id="templ1">
+	Simple test {{thing}}
+	</script>
+	<script type="text/javascript">
+		var templ = swig.compile($('#templ1').html());
+		$('#test1').html(templ({ thing: "hello" }));
+	</script>
+</body>
+</html>

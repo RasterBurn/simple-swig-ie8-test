@@ -10,10 +10,20 @@ module.exports = function (grunt) {
 					hostname: "*"
 				}
 			}
+		},
+		watch: {
+			all: {
+				options: {
+					livereload: true
+				},
+				files: ['index.html', 'swig.js']
+			}
 		}
 
 	});
 
 	grunt.loadNpmTasks('grunt-contrib-connect');
+	grunt.loadNpmTasks('grunt-contrib-watch');
+	grunt.registerTask('develop', ['connect', 'watch']);
 };
 

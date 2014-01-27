@@ -14,13 +14,14 @@
 	<script type="text/javascript" src="http://code.jquery.com/qunit/qunit-1.13.0.js"></script>
 	<script type="text/javascript" src="/swig.js"></script>
 	<script type="text/x-swig-template" id="templ1">
-	Simple test {{thing}}
+	Simple test <span id="thing">{{thing}}</span>
 	</script>
 	<script type="text/javascript">
 		var templ = swig.compile($('#templ1').html());
 		$('#test1').html(templ({ thing: "hello" }));
-		test("hello test", function () {
-			ok( 1 == "1", "passed!");
+		test("basic substitution", function () {
+			var node = document.getElementById('thing');
+			ok(node.textContent === "hello", "simple string substitution");
 		});
 	</script>
 </body>

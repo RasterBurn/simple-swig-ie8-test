@@ -10,4 +10,7 @@ Run just the server:
 grunt connect:server:keepalive
 ```
 
-Run tests:
+Work on code and livereload the tests:
+```
+grunt develop
+```
